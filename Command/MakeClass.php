@@ -29,10 +29,7 @@ use Symfony\Component\Console\Input\InputInterface;
  */
 class MakeClass extends AbstractMaker
 {
-    /**
-     * @var string
-     */
-    private $rootNamespace;
+    private string $rootNamespace;
 
     public function __construct(string $rootNamespace = 'App')
     {
@@ -58,8 +55,6 @@ class MakeClass extends AbstractMaker
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function generate(InputInterface $input, ConsoleStyle $io, Generator $generator): void

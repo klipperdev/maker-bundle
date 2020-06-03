@@ -56,8 +56,6 @@ class MakeChoice extends AbstractMaker
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function generate(InputInterface $input, ConsoleStyle $io, Generator $generator): void

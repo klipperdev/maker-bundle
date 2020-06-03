@@ -21,9 +21,6 @@ use Klipper\Component\Choice\Util\ChoiceUtil;
  */
 final class <?php echo $class_name; ?> implements ChoiceInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function listIdentifiers()
     {
         return [
@@ -33,17 +30,11 @@ final class <?php echo $class_name; ?> implements ChoiceInterface
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function getValues()
     {
         return ChoiceUtil::getValues(static::listIdentifiers());
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function getTranslationDomain()
     {
         return '<?php echo $translation_domain; ?>';
