@@ -36,10 +36,14 @@ class MakeChoice extends AbstractMaker
         return 'make:choice';
     }
 
+    public static function getCommandDescription(): string
+    {
+        return 'Creates a new choice class';
+    }
+
     public function configureCommand(Command $command, InputConfiguration $inputConfig): void
     {
         $command
-            ->setDescription('Creates a new choice class')
             ->addArgument('name', InputArgument::OPTIONAL, sprintf('The name of the choice class (e.g. <fg=yellow>%s</>)', Str::asClassName(Str::getRandomTerm())))
             ->addOption('namespace', '-s', InputOption::VALUE_OPTIONAL, 'The namespace of choice without "App\\"', 'Choice')
             ->addOption('translation-domain', '-t', InputOption::VALUE_OPTIONAL, 'The translation domain of the choice', 'choices')

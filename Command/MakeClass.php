@@ -41,10 +41,14 @@ class MakeClass extends AbstractMaker
         return 'make:class';
     }
 
+    public static function getCommandDescription(): string
+    {
+        return 'Creates a new generic class';
+    }
+
     public function configureCommand(Command $command, InputConfiguration $inputConfig): void
     {
         $command
-            ->setDescription('Creates a new generic class')
             ->addArgument('classname', InputArgument::OPTIONAL, sprintf('The FQCN of the generic class without "%s\\" (e.g. <fg=yellow>%s</>)', $this->rootNamespace, Str::asClassName(Str::getRandomTerm())))
             ->setHelp(file_get_contents(__DIR__.'/../Resources/help/MakeClass.txt'))
         ;
